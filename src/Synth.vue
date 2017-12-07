@@ -21,5 +21,9 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="sass">
+// $card-background-color: papayawhip
+@import '~bulma/bulma.sass'
+
+
 </style>
