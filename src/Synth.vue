@@ -3,13 +3,13 @@
 </template>
 
 <script>
-import Tone from 'tone'
+import {MonoSynth} from 'tone'
 
 export default {
 	name: 'synth',
 	data() {
 		return {
-			synth: new Tone.MonoSynth(),
+			synth: new MonoSynth({oscillator: {type: "fatsawtooth"}}).toMaster(),
 		}
 	},
 	methods: {
