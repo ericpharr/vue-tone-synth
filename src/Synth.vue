@@ -105,7 +105,7 @@ export default {
 				self.playNote(note + (self.octave + offset));
 			}
 
-			this.keys.forEach((entry) => {notes.push(
+			self.keys.forEach((entry) => {notes.push(
 				{
 					"keys": entry.key,
 					"prevent_repeat": true,
