@@ -13,9 +13,14 @@ export default {
 		}
 	},
 	methods: {
-		playNote() {
-			this.synth.toMaster();
-			this.synth.triggerAttackRelease("C4", "8n");
+		playNote(note) {
+			let notePlayed = note;
+			this.synth.triggerAttack(notePlayed);
+		},
+		stopSound(){
+			this.synth.triggerRelease();
+		},
+	},
 		}
 	}
 }
