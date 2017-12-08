@@ -55,6 +55,7 @@
 			<label for="portamento">Portamento
 				<input type="range" min="0" max="1" step=".05" name="portamento" v-model="synth.portamento">
 			</label>
+			<button type="button" v-for="key in keys" @mousedown="playNote(key.note + (octave + key.offset))" @mouseup="stopSound()">{{ key.note }}</button>
 </template>
 
 <script>
@@ -65,6 +66,24 @@ export default {
 	data() {
 		return {
 			synth: new MonoSynth({oscillator: {type: "fatsawtooth"}}).toMaster(),
+			keys:[{note: "C", offset: 0, key: "a"},
+				  {note: "C#", offset: 0, key: "w"},
+				  {note: "D", offset: 0, key: "s"},
+				  {note: "D#", offset: 0, key: "e"},
+				  {note: "E", offset: 0, key: "d"},
+				  {note: "F", offset: 0, key: "f"},
+				  {note: "F#", offset: 0, key: "t"},
+				  {note: "G", offset: 0, key: "g"},
+				  {note: "G#", offset: 0, key: "y"},
+				  {note: "A", offset: 0, key: "h"},
+				  {note: "A#", offset: 0, key: "u"},
+				  {note: "B", offset: 0, key: "j"},
+				  {note: "C", offset: 1, key: "k"},
+				  {note: "C#", offset: 1, key: "o"},
+				  {note: "D", offset: 1, key: "l"},
+				  {note: "D#", offset: 1, key: "p"},
+				  {note: "E", offset: 1, key: ";"}],
+			octave: 2,
 		}
 	},
 	methods: {
