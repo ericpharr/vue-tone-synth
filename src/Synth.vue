@@ -56,10 +56,12 @@
 				<input type="range" min="0" max="1" step=".05" name="portamento" v-model="synth.portamento">
 			</label>
 			<button type="button" v-for="key in keys" @mousedown="playNote(key.note + (octave + key.offset))" @mouseup="stopSound()">{{ key.note }}</button>
+	</div>
 </template>
 
 <script>
 import {MonoSynth} from 'tone'
+import keypress from 'keypress.js'
 
 export default {
 	name: 'synth',
@@ -95,8 +97,30 @@ export default {
 			this.synth.triggerRelease();
 		},
 	},
+	created: function() {
+
+			let self = this;
+			let notes = [];
+			function play(note, offset) {
+				self.playNote(note + (self.octave + offset));
+			}
+
+			this.keys.forEach((entry) => {notes.push(
+				{
+					"keys": entry.key,
+					"prevent_repeat": true,
+					"is_exclusive": true,
+					"prevent_default":true,
+					"on_keydown": function(){play(entry.note, entry.offset)},
+					"on_keyup": function(){self.stopSound()}
+			 	})
+			});
+
+			let listener = new keypress.Listener();
+
+			let listeners = listener.register_many(notes);
 		}
-	}
+
 }
 </script>
 
