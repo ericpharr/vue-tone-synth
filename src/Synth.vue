@@ -326,15 +326,18 @@ export default {
 }
 </script>
 
-<style lang="sass">
-
-$text: #f6f7ca
-$gap: 200px
-$primary: #ccd6d2
-$variable-columns: false
-$card-background-color: #364554
-@import '~bulma/bulma.sass'
-
-
-
+<!-- // <style lang="sass">
+//
+// $text: #f6f7ca
+// $gap: 200px
+// $primary: #ccd6d2
+// $variable-columns: false
+// $card-background-color: #364554
+// @import '~bulma/bulma.sass'
+//
+//
+//
+// </style> -->
+<style media="screen" lang="css">
+	@import '~vuetify/dist/vuetify.min.css';
 </style>
