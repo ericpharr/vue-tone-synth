@@ -1,7 +1,10 @@
 <template id="Synth" lang="html" @keydown.enter="playNote()">
+	<div class="">
+	<br>
 	<div class="container card">
-		<div class="columns">
-			<div class="column is-two-thirds">
+		<div class="columns is-gapless">
+			<div class="column"></div>
+			<div class="column is-two-fifths">
 				<!-- Oscillator -->
 				 <!-- <div class="card"> -->
 					<h1>Oscillator</h1>
@@ -33,7 +36,7 @@
 				<!-- </div> -->
 			</div>
 				<!-- Envelope -->
-			<div class="column is-one-third">
+			<div class="column is-two-fifths">
 					<!-- <div class="card" id="envelope"> -->
 				<h1>Envelope</h1>
 				<label for="envAttack">a
@@ -48,7 +51,7 @@
 				<label for="envRelease">r
 					<input type="range" v-model="synth.envelope.release">
 				</label> -->
-					<div class="columns">
+					<div class="columns is-gapless">
 						<div class="column"></div>
 						<div class="column">
 
@@ -60,7 +63,7 @@
 										name="envAttack"
 
 							></vue-slider>
-							<label class='label is-right' for="envAttack">a</label>
+							<label class='label is-right' for="envAttack">    a</label>
 							<p>{{ synth.envelope.attack }}</p>
 						</div>
 						<div class="column">
@@ -90,17 +93,18 @@
 					</div>
 			<!-- </div> -->
 			</div>
+			<div class="column"></div>
 
 		</div>
-		<div class="columns">
+		<div class="columns is-gapless">
 			<div class="column">
 				<!-- Filter Envelope -->
-				<div class="card" id="filter-envelope">
+				<!-- <div class="card" id="filter-envelope"> -->
 				<h1>Filter Envelope</h1>
 				<!-- <label for="filter-attack">a
 					<input type="range" name="filter-attack" v-model="synth.filterEnvelope.attack">
 				</label> -->
-				<div class="columns">
+				<div class="columns is-gapless">
 					<div class="column is-multiline">
 					<vue-slider v-model="synth.filterEnvelope.attack"
 								v-bind="sliderOptions"
@@ -175,10 +179,10 @@
 				<label for="envelope-exponent">exponent
 					<input type="range" min="1" max="8" name="envelope-exponent" v-model="synth.filterEnvelope.exponent">
 				</label>
-			</div>
+			<!-- </div> -->
 			</div>
 			<div class="column">
-				<div class="card">
+				<!-- <div class="card"> -->
 					<label for="portamento">Portamento
 						<input type="range" min="0" max="1" step=".05" name="portamento" v-model="synth.portamento">
 					</label>
@@ -190,11 +194,12 @@
 						<input type="radio" v-model="octave" :value="4">4
 						<input type="radio" v-model="octave" :value="5">5
 					</form>
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 
 			<button type="button" v-for="key in keys" @mousedown="playNote(key.note + (octave + key.offset))" @mouseup="stopSound()">{{ key.note }}</button>
+	</div>
 	</div>
 </template>
 
@@ -233,7 +238,7 @@ export default {
 				width: 2,
 				height: 100,
 				direction: "vertical",
-				dotWidth: 24,
+				dotWidth: 16,
 				dotHeight: 16,
 				eventType: "auto",
 				// min: 0,
