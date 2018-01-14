@@ -254,13 +254,38 @@ export default {
 				lazy: false,
 				reverse: false,
 				speed: 0.5,
-				formatter: null,
-				bgStyle: null,
-				sliderStyle: null,
-				tooltipStyle: null,
-				processStyle: null,
-				piecewiseStyle: null
+				// formatter: null,
+				bgStyle: {
+					  "backgroundColor": "#eafab3",
+				}
+				,
+				// // sliderStyle: null,
+				// // tooltipStyle: null,
+				processStyle: [
+					{
+					  "backgroundColor": "#6bb985",
+					}
+				],
+				// piecewiseStyle: null,
+				sliderStyle: [
+				  {
+				    "backgroundColor": "#78be9a"
+				},
+				{
+				  "backgroundColor": "#78be9a"
+			  	},
 
+				],
+				tooltipStyle: [
+				  {
+				    "backgroundColor": "#6bb985",
+					"borderColor": "#6bb985"
+				},
+				{
+				  "backgroundColor": "#6bb985",
+				  "borderColor": "#6bb985"
+				}
+				]
 			}
 		}
 	},
@@ -302,9 +327,14 @@ export default {
 </script>
 
 <style lang="sass">
+
+$text: #f6f7ca
 $gap: 200px
-// $card-background-color: papayawhip
+$primary: #ccd6d2
+$variable-columns: false
+$card-background-color: #364554
 @import '~bulma/bulma.sass'
+
 
 
 </style>
