@@ -94,6 +94,24 @@
 			<!-- </div> -->
 			</div>
 			<div class="column"></div>
+						<v-flex xs12 sm6 class="pa-3">
+							<v-layout row wrap>
+								<v-flex>
+									<h1 class="info--text title">Effects</h1>
+								</v-flex>
+							</v-layout>
+							<v-layout row wrap>
+								<v-flex>
+									<v-btn flat v-bind:class="{ primary: this.effects.reverb.on }" @click="toggleReverb">Reverb</v-btn>
+								</v-flex>
+								<v-flex>
+									<v-btn flat v-bind:class="{ primary: this.effects.chorus.on }" @click="toggleChorus">Chorus</v-btn>
+								</v-flex>
+								<v-flex>
+									<v-btn flat v-bind:class="{ primary: this.effects.delay.on }" @click="toggleDelay">Delay</v-btn>
+								</v-flex>
+							</v-layout>
+						</v-flex>
 
 		</div>
 		<div class="columns is-gapless">
@@ -205,6 +223,7 @@
 
 <script>
 import {MonoSynth} from 'tone'
+import {MonoSynth, JCReverb, Chorus, FeedbackDelay} from 'tone'
 import keypress from 'keypress.js'
 import vueSlider from 'vue-slider-component'
 
@@ -215,6 +234,9 @@ export default {
 	},
 	data() {
 		return {
+			reverb: new JCReverb().toMaster(),
+			chorus: new Chorus().toMaster(),
+			delay: new FeedbackDelay().toMaster(),
 			synth: new MonoSynth().toMaster(),
 			keys:[{note: "C", offset: 0, key: "a"},
 				  {note: "C#", offset: 0, key: "w"},
@@ -234,6 +256,17 @@ export default {
 				  {note: "D#", offset: 1, key: "p"},
 				  {note: "E", offset: 1, key: ";"}],
 			octave: 2,
+			effects: {
+				reverb: {
+					on: false,
+				},
+				chorus: {
+					on: false,
+				},
+				delay: {
+					on: false,
+				}
+			},
 			sliderOptions: {
 				width: 2,
 				height: 100,
@@ -297,6 +330,33 @@ export default {
 		stopSound(){
 			this.synth.triggerRelease();
 		},
+		toggleReverb(){
+			if (this.effects.reverb.on) {
+				this.effects.reverb.on = false;
+				this.synth.disconnect(this.reverb);
+			} else {
+				this.effects.reverb.on = true;
+				this.synth.connect(this.reverb);
+			}
+		},
+		toggleChorus(){
+			if (this.effects.chorus.on) {
+				this.effects.chorus.on = false;
+				this.synth.disconnect(this.chorus);
+			} else {
+				this.effects.chorus.on = true;
+				this.synth.connect(this.chorus);
+			}
+		},
+		toggleDelay(){
+			if (this.effects.delay.on) {
+				this.effects.delay.on = false;
+				this.synth.disconnect(this.delay);
+			} else {
+				this.effects.delay.on = true;
+				this.synth.connect(this.delay);
+			}
+		}
 	},
 	created() {
 
