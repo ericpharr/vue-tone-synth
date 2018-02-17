@@ -261,6 +261,54 @@
 							</v-layout>
 						</v-flex>
 					</v-layout>
+					<v-layout row wrap>
+						<v-toolbar color='primary'>
+							<vue-slider v-bind="sliderOptions" :direction='horizontal' :min="0" :max="1" :step-size=".05" name="portamento" v-model="synth.portamento"></vue-slider>
+
+						</v-toolbar>
+					</v-layout>
+					<v-layout row wrap justify-center>
+						<v-flex xs11>
+							<svg viewBox="16.31735610961914 322.4234924316406 466.3924217224121 98.94326782226562" width="100%"  xmlns="http://www.w3.org/2000/svg">
+							  <g transform="matrix(1.5625950098037718, 0, 0, 1.5824348926544187, -65.9923324584961, -94.58291625976562)">
+							    <rect x="52.675" y="263.532" width="29.855" height="62.502" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); vector-effect: non-scaling-stroke;"/>
+							    <rect x="82.513" y="263.53" width="29.855" height="62.502" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); vector-effect: non-scaling-stroke;"/>
+							    <rect x="75.706" y="263.542" width="13.634" height="37.626"/>
+							    <rect x="112.357" y="263.529" width="29.855" height="62.502" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); vector-effect: non-scaling-stroke;"/>
+							    <rect x="105.531" y="263.534" width="13.634" height="37.626"/>
+							    <rect x="142.213" y="263.526" width="29.855" height="62.502" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); vector-effect: non-scaling-stroke;"/>
+							    <rect x="172.068" y="263.522" width="29.855" height="62.502" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); vector-effect: non-scaling-stroke;"/>
+							    <rect x="165.242" y="263.523" width="13.634" height="37.626"/>
+							    <rect x="261.601" y="263.536" width="29.855" height="62.502" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); vector-effect: non-scaling-stroke;"/>
+							    <rect x="291.439" y="263.546" width="29.855" height="62.502" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); vector-effect: non-scaling-stroke;"/>
+							    <rect x="284.613" y="263.543" width="13.634" height="37.626"/>
+							    <rect x="201.904" y="263.528" width="29.855" height="62.502" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); vector-effect: non-scaling-stroke;"/>
+							    <rect x="195.081" y="263.524" width="13.634" height="37.626"/>
+							    <rect x="231.81" y="190.097" width="29.855" height="62.502" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); vector-effect: non-scaling-stroke;" transform="matrix(1.000001, 0, 0, 1, -0.052575, 73.430679)"/>
+							    <rect x="224.932" y="263.526" width="13.634" height="37.626"/>
+							    <rect x="321.293" y="263.542" width="29.855" height="62.502" style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); vector-effect: non-scaling-stroke;"/>
+							    <rect x="314.483" y="263.552" width="13.634" height="37.626"/>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 44.152409, 61.666313)" style="fill: rgb(51, 51, 51); font-size: 12px; white-space: pre;" x="31.25" y="406.888">a</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 42.232525, 61.666313)" style="fill: rgb(51, 51, 51); font-size: 12px; white-space: pre;" x="79.719" y="406.888">s</text>
+							    <text transform="matrix(0.63996, 0, 0, 0.631937, 36.574146, 62.875378)" style="fill: rgb(51, 51, 51); font-size: 12px; white-space: pre;" x="136.48" y="404.974">d</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 42.232525, 61.666313)" style="fill: rgb(51, 51, 51); font-size: 12px; white-space: pre;" x="177.296" y="407.526">f</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 42.232525, 62.930191)" style="fill: rgb(51, 51, 51); font-size: 12px; white-space: pre;" x="220.026" y="405.612">g</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 42.232525, 62.930191)" style="fill: rgb(51, 51, 51); font-size: 12px; white-space: pre;" x="268.495" y="405.612">h</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 42.232525, 62.930191)" style="fill: rgb(51, 51, 51); font-size: 12px; white-space: pre;" x="316.965" y="405.613">j</text>
+							    <text transform="matrix(0.708073, 0, 0, 0.631937, 17.51642, 62.298252)" style="fill: rgb(51, 51, 51); font-size: 12px; white-space: pre;" x="362.882" y="406.25">k</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 40.312641, 62.298252)" style="fill: rgb(51, 51, 51); font-size: 12px; white-space: pre;" x="413.903" y="406.888">l</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 42.232525, 62.930191)" style="fill: rgb(51, 51, 51); font-size: 12px; white-space: pre;" x="459.184" y="404.337">;</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 35.349678, 67.134491)" style="fill: rgb(255, 255, 255); font-size: 12px; white-space: pre;"><tspan x="66.964" y="359.694">w</tspan><tspan x="66.964" dy="1em">​</tspan><tspan x="66.964" dy="1em">​</tspan></text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 42.232525, 62.298252)" style="fill: rgb(255, 255, 255); font-size: 12px; white-space: pre;" x="105.229" y="366.709">e</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 42.232525, 61.666313)" style="fill: rgb(255, 255, 255); font-size: 12px; white-space: pre;" x="200.255" y="367.985">t</text>
+							    <text transform="matrix(0.63996, 0, 0, 0.631937, 39.199448, 69.204399)" style="fill: rgb(255, 255, 255); font-size: 12px; white-space: pre;" x="250" y="355.867">y</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 42.872486, 64.194069)" style="fill: rgb(255, 255, 255); font-size: 12px; white-space: pre;" x="290.178" y="364.158">u</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 42.872486, 62.930191)" style="fill: rgb(255, 255, 255); font-size: 12px; white-space: pre;" x="383.929" y="366.709">o</text>
+							    <text transform="matrix(0.639961, 0, 0, 0.631937, 43.512447, 63.56213)" style="fill: rgb(255, 255, 255); font-size: 12px; white-space: pre;" x="429.847" y="365.434">p</text>
+							  </g>
+							</svg>
+						</v-flex>
+					</v-layout>
 					</v-card>
 				</v-flex>
 			</v-layout>
